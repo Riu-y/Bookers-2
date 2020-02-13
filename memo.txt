@@ -1,0 +1,51 @@
+application.html.erb
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <dev id="sidemenu">
+      <ul>
+        <% if user_signed_id? %>
+        <li>
+          <%= link_to"Home",    %>
+        </li>
+        <li>
+          <%= link_to "Users",   %>
+        </li>
+        <li>
+          <%= link_to "Book",   %>
+        </li>
+        <li>
+          <%= link_to "Logout",destroy_user_seddion_path, method: :delete %>
+        </li>
+      <% else %>
+        <li>
+          <%= link_to"Home",    %>
+        </li>
+        <li>
+          <%= link_to "About",   %>
+        </li>
+        <li>
+          <%= link_to "sign up", new_user_session_path   %>
+        </li>
+        <li>
+          <%= link_to "login", new_user_registration_path  %>
+        </li>
+      </ul>
+    </dev>
+   <% end %>
+  <%= yield %>
+
+    <footer>
+     <p>CopyRight Infratop.inc</p>
+    </footer>
+  </body>
+</html>

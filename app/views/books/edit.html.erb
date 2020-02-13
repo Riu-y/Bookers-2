@@ -1,0 +1,16 @@
+<main class="editing">
+<h1>Editing page</h1>
+
+<%= form_for(@book) do |f| %>
+
+ <h4>タイトル</h4>
+ <%= f.text_field :title %>
+ <h4>カテゴリー</h4>
+ <%= f.text_field :opinion %>
+ <%= f.submit 'Update Book' %>
+
+<%= link_to "Show", show_book_path(@book) %>
+<span>|</span>
+<%= link_to "Back", books_path %>
+ <% end %>
+</main>

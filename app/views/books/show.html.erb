@@ -1,0 +1,17 @@
+<h1>Book detail</h1>
+
+<table>
+	<tbody>
+		<%= @books.each do |book| %>
+		<tr>
+			<td></td>
+			<td><% @book.text %></td>
+			<td><% @book.opinion %></td>
+			<td>
+			<span class="button"><%= link_to "edit", edit_book_path(@book) %></span>
+			<span class="button"><%= link_to "destroy", book_path(book), method: :delete "date-confirm" => "本当に削除して良いですか？"%></span></td>
+		</tr>
+	    <% end %>
+	</tbody>
+</table>
+
